@@ -1,0 +1,226 @@
+/* ==========================================================================
+   1. ОСНОВНОЙ КОНТЕЙНЕР САЙДБАРА
+   ========================================================================== */
+[data-testid="stSidebar"] {
+    background-color: white !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+    position: fixed !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    width: 300px !important;
+    max-height: calc(100vh - 2rem) !important;
+    overflow-y: auto !important;
+    z-index: 999 !important;
+}
+
+/* Убираем лишние отступы внутри контейнеров Streamlit */
+[data-testid="stSidebar"] .row-widget,
+[data-testid="stSidebar"] .element-container {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Добавьте это правило в конец Блока 1 */
+[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
+    gap: 0.5rem !important; /* Уменьшаем стандартный отступ между ВСЕМИ элементами в 2-3 раза */
+}
+/* ==========================================================================
+   2. ТИПОГРАФИКА И РАЗДЕЛИТЕЛИ (СТРУКТУРА БЛОКОВ)
+   ========================================================================== */
+/* Единый стиль для всех заголовков h3 */
+[data-testid="stSidebar"] h3 {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    margin-top: 0.4rem !important;
+    margin-bottom: 0.15rem !important; /* Минимальный отступ снизу до элемента */
+    color: #262730 !important;
+}
+
+/* Компактные разделительные линии между смысловыми блоками */
+[data-testid="stSidebar"] hr {
+    margin-top: 0.5rem !important;   /* Уменьшили отступ сверху */
+    margin-bottom: 0.5rem !important;/* Уменьшили отступ снизу */
+    padding: 0 !important;            /* Убрали внутренние отступы, если они были */
+    border: none !important;
+    border-top: 1px solid #f0f2f6 !important;
+}
+
+/* Маленькие подписи/капшены под элементами */
+[data-testid="stSidebar"] .stCaption p {
+    font-size: 0.8rem !important;
+    color: #747780 !important;
+    line-height: 1.3 !important;
+}
+
+/* ==========================================================================
+   3. ПОЛЯ ВЫБОРА И МУЛЬТИСЕЛЕКТ (ВЫДЕЛЕНИЕ ОБЛАСТЕЙ)
+   ========================================================================== */
+/* Базовый стиль для рамок выпадающего списка и мультиселекта */
+[data-testid="stSidebar"] div[data-baseweb="select"] {
+    border: 1px solid #e0e3e9 !important;
+    border-radius: 8px !important;
+    background-color: #fafafa !important; /* Легкий серый фон по умолчанию */
+    transition: all 0.2s ease-in-out !important;
+}
+
+/* Эффект при наведении на поля выбора */
+[data-testid="stSidebar"] div[data-baseweb="select"]:hover {
+    border-color: #b0b7c6 !important;
+    background-color: white !important;
+}
+
+/* Эффект фокуса (когда поле активно/открыто) */
+[data-testid="stSidebar"] div[data-baseweb="select"]:focus-within {
+    border-color: #4a90e2 !important;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15) !important;
+    background-color: white !important;
+}
+
+/* Текст плейсхолдера внутри мультиселекта */
+[data-testid="stSidebar"] div[data-baseweb="select"] div[data-placeholder] {
+    color: #8a90a0 !important;
+    font-size: 0.875rem !important;
+}
+
+/* Выбранные теги в мультиселекте удаления */
+[data-testid="stSidebar"] .stMultiSelect span[data-baseweb="tag"] {
+    background-color: #fee2e2 !important; /* Легкий красный оттенок для удаляемых файлов */
+    color: #991b1b !important;
+    border-radius: 4px !important;
+    font-size: 0.8rem !important;
+}
+
+/* ==========================================================================
+   4. КНОПКИ УПРАВЛЕНИЯ
+   ========================================================================== */
+/* Все стандартные кнопки — одинаковая форма и поведение */
+[data-testid="stSidebar"] .stButton > button {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    min-height: 38px !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 8px !important;
+    transition: all 0.15s ease-in-out !important;
+}
+
+/* Кнопка прогноза (Primary) с фирменным градиентом */
+[data-testid="stSidebar"] button[kind="primary"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="stSidebar"] button[kind="primary"]:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4) !important;
+}
+
+/* Вторичные кнопки (например, отмены или переключатели) */
+[data-testid="stSidebar"] button[kind="secondary"] {
+    border: 1px solid #e0e3e9 !important;
+    background-color: white !important;
+    color: #4b5563 !important;
+}
+
+[data-testid="stSidebar"] button[kind="secondary"]:hover {
+    border-color: #b0b7c6 !important;
+    color: #1f2937 !important;
+    background-color: #f9fafb !important;
+}
+
+/* ==========================================================================
+   5. КАСТОМИЗАЦИЯ ЗАГРУЗЧИКА ФАЙЛОВ (file_uploader)
+   ========================================================================== */
+[data-testid="stSidebar"] [data-testid="stFileUploader"] button {
+    position: relative !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    min-height: 44px !important;
+    padding: 0.75rem 1rem !important;
+    background-color: white !important;
+    border: 2px dashed #4a90e2 !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    color: transparent !important;
+    font-size: 0 !important;
+}
+
+/* Глушим дефолтный встроенный текст Streamlit */
+[data-testid="stSidebar"] [data-testid="stFileUploader"] button * {
+    color: transparent !important;
+    font-size: 0 !important;
+    display: none !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploader"] button:hover {
+    background-color: #f0f7ff !important;
+    border-color: #357abd !important;
+}
+
+/* Наш кастомный русский текст */
+[data-testid="stSidebar"] [data-testid="stFileUploader"] button::before {
+    content: "Выбрать LAS-файлы" !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    color: #4a90e2 !important;
+    white-space: nowrap !important;
+    display: block !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploader"] button:hover::before {
+    color: #357abd !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploader"] section {
+    padding: 0 !important;
+}
+
+/* ==========================================================================
+   6. ПРОЧИЕ КОМПОНЕНТЫ И ЧЕКБОКСЫ КРИВЫХ
+   ========================================================================== */
+/* Сетка чекбоксов для выбора ГИС кривых */
+[data-testid="stSidebar"] .stCheckbox {
+    margin-bottom: -0.1rem !important;
+}
+
+[data-testid="stSidebar"] .stCheckbox label p {
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+}
+
+/* Карточки информационных сообщений (st.info / st.warning) */
+[data-testid="stSidebar"] .stAlert {
+    border-radius: 8px !important;
+    padding: 0.75rem !important;
+}
+
+[data-testid="stSidebar"] .stAlert div[data-testid="stMarkdownContainer"] p,
+[data-testid="stSidebar"] .stAlert div[data-testid="stMarkdownContainer"] li {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+}
+
+/* ==========================================================================
+   7. ОСОБЫЕ СТИЛИ ДЛЯ КНОПОК УДАЛЕНИЯ ФАЙЛОВ
+   ========================================================================== */
+/* Прицельно уменьшаем текст у кнопок удаления (чтобы не переносился) */
+[data-testid="stSidebar"] button[key*="btn_delete_"] {
+    font-size: 0.82rem !important;
+    padding: 0.4rem 0.2rem !important;
+}
+
+/* Делаем деструктивное действие визуально понятным (красный ховер) */
+[data-testid="stSidebar"] button[key*="btn_delete_"]:not(:disabled):hover {
+    border-color: #fca5a5 !important;
+    background-color: #fef2f2 !important;
+    color: #dc2626 !important;
+}
+

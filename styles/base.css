@@ -1,0 +1,44 @@
+/* base.css — Глобальные настройки и переопределение виджетов Streamlit */
+
+/* 1. Глобальные настройки страницы
+.block-container {
+    max-width: 95% !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}*/
+
+/* 2. Стили для компонентов отображения (Метрики, Таблицы) */
+[data-testid="stMetric"] {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+[data-testid="stMetric"] label {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="stMetric"] [data-testid="stMetricValue"] {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+}
+
+[data-testid="stDataFrame"] {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 3. Системные уведомления и элементы управления */
+.stSuccess {
+    background-color: #d4edda !important;
+    border-color: #c3e6cb !important;
+    border-radius: 8px !important;
+}
+
+.streamlit-expanderHeader {
+    font-weight: 600 !important;
+    background-color: #f8f9fa !important;
+    border-radius: 8px !important;
+}

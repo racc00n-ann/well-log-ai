@@ -1,0 +1,28 @@
+/* content.css — Стили центрального контента и кастомных блоков */
+
+/* 1. Приветственный экран (Welcome Screen) */
+.welcome-container {
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.welcome-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-subtitle {
+    font-size: 1.1rem;
+    color: #31333F;
+}
+
+/*.welcome-hint {
+    color: gray;
+    font-style: italic;
+}
+
+ 2. Логика смещения контента (динамический макет)
+.shifted-content {
+    margin-left: 320px !important;
+    width: calc(100% - 320px) !important;
+}*/
